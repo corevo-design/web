@@ -1,0 +1,6 @@
+{
+  "name": "Corevo Interior",
+  "description": "Premium renovation and interior design solutions in Malaysia, from concept planning to completed makeover.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

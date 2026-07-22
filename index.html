@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- ========================================== -->
+  <!-- 1. WEBSITE TITLE (EDIT HERE) -->
+  <!-- ========================================== -->
+  <title>Corevo Interior | Renovation & Interior Design Malaysia</title>
+  
+  <!-- Pre-compiled Tailwind CSS Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="min-h-screen bg-stone-50 font-sans text-stone-800 antialiased selection:bg-brand-gold selection:text-white">
+
+  <!-- ========================================== -->
+  <!-- 2. FLOATING NAVIGATION HEADER -->
+  <!-- ========================================== -->
+  <header id="navbar-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-gradient-to-b from-stone-950/80 to-transparent py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      
+      <!-- Brand Logo & Name (EDIT HERE) -->
+      <div class="flex items-center gap-3 cursor-pointer" data-scroll-to="hero">
+        <div class="relative flex items-center justify-center w-10 h-10 rounded-full border border-brand-gold/60 bg-black/40">
+          <span class="font-serif text-lg font-bold text-brand-gold">C</span>
+          <div class="absolute inset-0.5 rounded-full border border-dashed border-brand-gold/20"></div>
+        </div>
+        <div>
+          <h1 class="font-serif text-base sm:text-lg font-bold text-white tracking-wide uppercase leading-tight">
+            Corevo <span class="text-brand-gold">Interior</span>
+          </h1>
+          <span class="block text-[8px] sm:text-[9px] text-brand-gold/80 tracking-[0.25em] uppercase font-sans font-light">
+            Renovation & Interior Design
+          </span>
+        </div>
+      </div>
+
+      <!-- Navigation Menu (Desktop) -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-widest text-stone-300">
+        <button data-scroll-to="hero" class="hover:text-brand-gold transition-colors cursor-pointer bg-transparent border-none">Home</button>
+        <button data-scroll-to="services" class="hover:text-brand-gold transition-colors cursor-pointer bg-transparent border-none">Services</button>
+        <button data-scroll-to="portfolio" class="hover:text-brand-gold transition-colors cursor-pointer bg-transparent border-none">Portfolio</button>
+        <button data-scroll-to="process" class="hover:text-brand-gold transition-colors cursor-pointer bg-transparent border-none">Process</button>
+        <button data-scroll-to="faq" class="hover:text-brand-gold transition-colors cursor-pointer bg-transparent border-none">FAQ</button>
+        <button data-scroll-to="contact" class="hover:text-brand-gold transition-colors cursor-pointer bg-transparent border-none">Contact</button>
+      </nav>
+
+      <!-- WhatsApp CTA Button (Desktop - EDIT LINK) -->
+      <div class="hidden lg:flex items-center">
+        <a href="https://wa.me/60103925762?text=Hi%20Corevo%20Interior%2C%20I%20would%20like%20to%20get%20a%20free%20consultation%20about%20my%20renovation%20project." 
+           target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2 bg-brand-gold hover:bg-brand-gold-dark text-stone-950 text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full transition-all duration-300 shadow-md shadow-brand-gold/20 hover:shadow-brand-gold/30 hover:scale-[1.03]">
+          <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.81 9.81 0 0 0 12.04 2zm5.96 14.18c-.25.7-.1.15-.65 1.15a1.87 1.87 0 0 1-.95.95c-.45.2-2.05.75-4.35-.25a11.95 11.95 0 0 1-5.05-4.5c-.9-.9-1.5-2.05-1.5-3.05 0-1.45.75-2.2 1.05-2.5.3-.3.65-.4.85-.4.2 0 .4.05.55.05s.35-.05.55.35c.2.45.75 1.8 1 2.3.25.5.05.75-.15 1s-.4.55-.6.75c-.2.2-.4.4-.15.8.6.95 1.4 1.75 2.3 2.35.35.25.6.2.8.05.2-.25.75-.85.95-1.15.2-.3.45-.25.75-.15.3.1 1.9.9 2.2 1.05.3.15.5.2.55.35a1 1 0 0 1-.05.5z"/></svg>
+          <span>WhatsApp Us</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <div class="flex md:hidden">
+        <button id="mobile-menu-toggle" class="text-stone-300 hover:text-white p-2 focus:outline-none" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Flyout Menu -->
+    <div id="mobile-menu-flyout" class="hidden md:hidden absolute top-full left-0 right-0 bg-stone-950/95 backdrop-blur-lg border-b border-stone-800 shadow-xl px-6 py-8 space-y-5">
+      <div class="flex flex-col gap-4 text-sm font-semibold uppercase tracking-widest text-stone-300">
+        <button data-scroll-to="hero" class="text-left py-2 hover:text-brand-gold border-b border-stone-900 bg-transparent">Home</button>
+        <button data-scroll-to="services" class="text-left py-2 hover:text-brand-gold border-b border-stone-900 bg-transparent">Services</button>
+        <button data-scroll-to="portfolio" class="text-left py-2 hover:text-brand-gold border-b border-stone-900 bg-transparent">Portfolio</button>
+        <button data-scroll-to="process" class="text-left py-2 hover:text-brand-gold border-b border-stone-900 bg-transparent">Process</button>
+        <button data-scroll-to="faq" class="text-left py-2 hover:text-brand-gold border-b border-stone-900 bg-transparent">FAQ</button>
+        <button data-scroll-to="contact" class="text-left py-2 hover:text-brand-gold bg-transparent">Contact</button>
+      </div>
+      <div class="pt-4">
+        <a href="https://wa.me/60103925762?text=Hi%20Corevo%20Interior%2C%20I%20would%20like%20to%20get%20a%20free%20consultation%20about%20my%20renovation%20project." 
+           target="_blank" rel="noopener noreferrer" 
+           class="w-full inline-flex items-center justify-center gap-2.5 bg-brand-gold text-stone-950 text-xs font-bold uppercase tracking-wider py-3.5 rounded-xl shadow-lg">
+          <span>WhatsApp Chat</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- 3. HERO SECTION WITH SPOTLIGHT -->
+  <!-- ========================================== -->
+  <section id="hero" class="relative bg-stone-950 text-white min-h-[92vh] flex flex-col justify-between pt-32 pb-12 overflow-hidden">
+    
+    <!-- Background Renovation Image (EDIT IMAGE URL HERE) -->
+    <div class="absolute inset-0 z-0">
+      <!-- EDIT IMAGE: Replace path below to customize the background image -->
+      <img src="assets/images/hero-banner.png" 
+           alt="Corevo Interior Showcase" 
+           class="w-full h-full object-cover object-right md:object-center">
+      <div class="absolute inset-y-0 left-0 w-full md:w-[60%] bg-gradient-to-r from-black/90 via-black/50 to-transparent z-10"></div>
+      <div class="absolute inset-0 bg-black/30 md:bg-transparent z-10"></div>
+    </div>
+
+    <!-- Hero Headline & CTA (EDIT TEXT HERE) -->
+    <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto flex flex-col items-start text-left pt-6">
+      
+      <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-md border border-brand-gold/30 bg-stone-950/60 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold mb-6">
+        Renovation & Interior Design in Malaysia
+      </span>
+
+      <h2 class="font-serif text-3xl sm:text-5xl md:text-5xl lg:text-6xl font-normal leading-[1.15] tracking-tight text-white max-w-2xl mb-6">
+        Transform Your Space Into a <span class="text-brand-gold">Beautiful</span>, <span class="text-brand-gold">Practical</span> &amp; <span class="text-brand-gold">Comfortable</span> Home
+      </h2>
+
+      <p class="font-sans text-sm sm:text-base text-stone-200 max-w-xl leading-relaxed mb-8 font-light">
+        We provide renovation and interior design solutions for condos, landed houses, Airbnb units, offices, and retail spaces — from concept planning to completed makeover.
+      </p>
+
+      <!-- CTA Buttons (EDIT LINKS HERE) -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12 w-full sm:w-auto">
+        <a href="https://wa.me/60103925762?text=Hi%20Corevo%20Design%2C%20I%20would%20like%20to%20get%20a%20free%20consultation%20about%20my%20renovation%20project." 
+           target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center justify-center gap-2 bg-brand-gold hover:bg-brand-gold-dark text-stone-950 font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-lg shadow-xl shadow-brand-gold/15 transition-all duration-300 hover:scale-[1.02]">
+          <span>Get Free Consultation on WhatsApp</span>
+        </a>
+        <button data-scroll-to="services" 
+                class="inline-flex items-center justify-center gap-2 border border-stone-500 hover:border-brand-gold bg-transparent text-stone-200 hover:text-white font-semibold text-xs uppercase tracking-wider px-6 py-3.5 rounded-lg transition-all duration-300 hover:bg-white/5 cursor-pointer">
+          <span>View Our Services</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Problem Section (Muji-inspired design) -->
+  <section class="py-20 bg-brand-sand/40" id="problems">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-[11px] font-bold text-brand-bronze uppercase tracking-[0.25em] block">
+          Planning Your Renovation
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-stone-900 tracking-tight leading-tight">
+          Not sure where to start?
+        </h2>
+        <div class="w-12 h-1 bg-brand-gold mx-auto rounded"></div>
+        <p class="text-stone-600 text-sm sm:text-base leading-relaxed font-light">
+          Many homeowners want a better space, but feel unsure about the process, cost, budget, and who to trust.
+        </p>
+      </div>
+
+      <!-- 6 Problem Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        
+        <!-- Card 1 -->
+        <div class="group bg-white p-6 sm:p-8 rounded-2xl border border-stone-200/80 hover:border-brand-bronze hover:-translate-y-1 hover:shadow-lg hover:shadow-brand-bronze/5 transition-all duration-300 text-left flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-sand/50 flex items-center justify-center text-brand-gold mb-6 border border-brand-sand/80 group-hover:bg-brand-gold/10 group-hover:text-brand-gold-dark transition-colors duration-300">
+              <svg class="w-6 h-6 stroke-[1.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <rect x="4" y="2" width="16" height="20" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="8" y1="6" x2="16" y2="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="16" y1="14" x2="16" y2="18" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M8 18h.01M12 18h.01" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="font-sans font-semibold text-stone-900 text-lg mb-2">
+              Worried About Cost
+            </h3>
+            <p class="text-stone-600 text-sm leading-relaxed font-light">
+              Not sure how much renovation will cost?
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="group bg-white p-6 sm:p-8 rounded-2xl border border-stone-200/80 hover:border-brand-bronze hover:-translate-y-1 hover:shadow-lg hover:shadow-brand-bronze/5 transition-all duration-300 text-left flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-sand/50 flex items-center justify-center text-brand-gold mb-6 border border-brand-sand/80 group-hover:bg-brand-gold/10 group-hover:text-brand-gold-dark transition-colors duration-300">
+              <svg class="w-6 h-6 stroke-[1.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="14" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 12h-6a2 2 0 0 0 0 4h6" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="17" cy="14" r="1"/>
+              </svg>
+            </div>
+            <h3 class="font-sans font-semibold text-stone-900 text-lg mb-2">
+              Afraid It’s Too Expensive
+            </h3>
+            <p class="text-stone-600 text-sm leading-relaxed font-light">
+              Worried that the renovation may go beyond your budget?
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="group bg-white p-6 sm:p-8 rounded-2xl border border-stone-200/80 hover:border-brand-bronze hover:-translate-y-1 hover:shadow-lg hover:shadow-brand-bronze/5 transition-all duration-300 text-left flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-sand/50 flex items-center justify-center text-brand-gold mb-6 border border-brand-sand/80 group-hover:bg-brand-gold/10 group-hover:text-brand-gold-dark transition-colors duration-300">
+              <svg class="w-6 h-6 stroke-[1.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="font-sans font-semibold text-stone-900 text-lg mb-2">
+              Don’t Know Where to Start
+            </h3>
+            <p class="text-stone-600 text-sm leading-relaxed font-light">
+              Need help with layout, style, materials, and planning?
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="group bg-white p-6 sm:p-8 rounded-2xl border border-stone-200/80 hover:border-brand-bronze hover:-translate-y-1 hover:shadow-lg hover:shadow-brand-bronze/5 transition-all duration-300 text-left flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-sand/50 flex items-center justify-center text-brand-gold mb-6 border border-brand-sand/80 group-hover:bg-brand-gold/10 group-hover:text-brand-gold-dark transition-colors duration-300">
+              <svg class="w-6 h-6 stroke-[1.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M3 11V9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 11v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 11h18M6 14v-3M18 14v-3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="font-sans font-semibold text-stone-900 text-lg mb-2">
+              Need a Comfortable Home
+            </h3>
+            <p class="text-stone-600 text-sm leading-relaxed font-light">
+              Want a clean, calm, and practical home for daily living?
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="group bg-white p-6 sm:p-8 rounded-2xl border border-stone-200/80 hover:border-brand-bronze hover:-translate-y-1 hover:shadow-lg hover:shadow-brand-bronze/5 transition-all duration-300 text-left flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-sand/50 flex items-center justify-center text-brand-gold mb-6 border border-brand-sand/80 group-hover:bg-brand-gold/10 group-hover:text-brand-gold-dark transition-colors duration-300">
+              <svg class="w-6 h-6 stroke-[1.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="3" y1="12" x2="21" y2="12" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="12" y1="3" x2="12" y2="21" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="7.5" cy="7.5" r="1"/>
+                <circle cx="16.5" cy="7.5" r="1"/>
+                <circle cx="7.5" cy="16.5" r="1"/>
+                <circle cx="16.5" cy="16.5" r="1"/>
+              </svg>
+            </div>
+            <h3 class="font-sans font-semibold text-stone-900 text-lg mb-2">
+              Not Enough Storage
+            </h3>
+            <p class="text-stone-600 text-sm leading-relaxed font-light">
+              Need smarter space planning, cabinets, and built-in storage?
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="group bg-white p-6 sm:p-8 rounded-2xl border border-stone-200/80 hover:border-brand-bronze hover:-translate-y-1 hover:shadow-lg hover:shadow-brand-bronze/5 transition-all duration-300 text-left flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-sand/50 flex items-center justify-center text-brand-gold mb-6 border border-brand-sand/80 group-hover:bg-brand-gold/10 group-hover:text-brand-gold-dark transition-colors duration-300">
+              <svg class="w-6 h-6 stroke-[1.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="9" cy="7" r="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="font-sans font-semibold text-stone-900 text-lg mb-2">
+              Need a Trusted Renovation Team
+            </h3>
+            <p class="text-stone-600 text-sm leading-relaxed font-light">
+              Looking for clear communication and a reliable renovation partner?
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Reassuring Footer text to encourage user action -->
+      <div class="mt-12 text-center">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 4. TRUST & OUR APPROACH SECTION -->
+  <!-- ========================================== -->
+  <section id="trust-partner" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-5 space-y-6 text-left">
+          <span class="text-[11px] font-bold text-brand-bronze uppercase tracking-[0.25em] block">Our Approach</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-stone-900 leading-tight tracking-tight">
+            A Practical Design &amp; Renovation Partner You Can Trust
+          </h2>
+          <div class="w-12 h-1 bg-brand-gold rounded"></div>
+          
+          <p class="text-stone-600 text-sm sm:text-base leading-relaxed font-light">
+            We help you coordinate, plan, design, and physically construct your dream space based on your specific lifestyle, budget, and purpose.
+          </p>
+          <p class="text-stone-600 text-sm sm:text-base leading-relaxed font-light">
+            Whether you want to establish a cozy residence, a modern apartment styling, or a highly practical boutique office, our professional design team guides you from drafting the conceptual board to handling keys.
+          </p>
+
+          <div class="pt-4">
+            <a href="https://wa.me/60103925762?text=Hi%20Corevo%20Design" 
+               target="_blank" rel="noopener noreferrer" 
+               class="inline-flex items-center gap-2.5 bg-brand-gold hover:bg-brand-gold-dark text-stone-950 font-bold text-sm px-6 py-3.5 rounded-xl shadow-lg transition-all">
+              <span>Chat With Us on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Card Grid -->
+        <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <div class="flex flex-col rounded-xl overflow-hidden border border-stone-200/60 shadow-sm bg-stone-50">
+            <!-- EDIT IMAGE: Replace path below to customize Approach Image 1 -->
+            <img src="assets/images/solution-design.png" alt="Beautiful Design" class="w-full h-44 object-cover">
+            <div class="p-4 space-y-2">
+              <h4 class="font-sans font-bold text-sm text-stone-900">Practical &amp; Beautiful</h4>
+              <p class="text-xs text-stone-500 leading-relaxed font-light">We select long-lasting components and construct beautiful layouts satisfying storage demands.</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col rounded-xl overflow-hidden border border-stone-200/60 shadow-sm bg-stone-50">
+            <!-- EDIT IMAGE: Replace path below to customize Approach Image 2 -->
+            <img src="assets/images/solution-budget.png" alt="Smart Budgeting" class="w-full h-44 object-cover">
+            <div class="p-4 space-y-2">
+              <h4 class="font-sans font-bold text-sm text-stone-900">Smart Budgeting</h4>
+              <p class="text-xs text-stone-500 leading-relaxed font-light">We plan carpentry around your budget, suggesting premium material alternatives.</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col rounded-xl overflow-hidden border border-stone-200/60 shadow-sm bg-stone-50">
+            <!-- EDIT IMAGE: Replace path below to customize Approach Image 3 -->
+            <img src="assets/images/solution-project.png" alt="End-to-End Project" class="w-full h-44 object-cover">
+            <div class="p-4 space-y-2">
+              <h4 class="font-sans font-bold text-sm text-stone-900">End-to-End Project</h4>
+              <p class="text-xs text-stone-500 leading-relaxed font-light">We supervise trades, schedule timelines, and coordinate municipal permits.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 6. PORTFOLIO RECENT PROJECTS SECTION -->
+  <!-- ========================================== -->
+  <section id="portfolio" class="pt-0 pb-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="font-serif text-3xl sm:text-4xl font-normal text-stone-900 tracking-tight mb-3">
+          Recent Projects
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base leading-relaxed font-light">
+          A few examples of spaces we helped improve.
+        </p>
+      </div>
+
+      <!-- 4-Column Grid based on Screenshot -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8" id="portfolio-grid">
+        
+        <!-- Card 1: Small condo makeover -->
+        <div class="flex flex-col items-center group">
+          <div class="w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden border border-stone-200/80 bg-stone-100 relative transition-all duration-300 hover:border-brand-gold/40 hover:scale-[1.02] hover:shadow-md">
+            <!-- EDIT IMAGE: Replace path below to customize Recent Project Card 1 -->
+            <img src="assets/images/portfolio-living-room.png" 
+                 alt="Small condo makeover" 
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                 referrerpolicy="no-referrer">
+          </div>
+          <p class="mt-4 font-sans text-sm md:text-base text-stone-700 text-center transition-colors group-hover:text-brand-gold-dark">
+            Small condo makeover
+          </p>
+        </div>
+
+        <!-- Card 2: Kitchen cabinet upgrade -->
+        <div class="flex flex-col items-center group">
+          <div class="w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden border border-stone-200/80 bg-stone-100 relative transition-all duration-300 hover:border-brand-gold/40 hover:scale-[1.02] hover:shadow-md">
+            <!-- EDIT IMAGE: Replace path below to customize Recent Project Card 2 -->
+            <img src="assets/images/portfolio-kitchen.png" 
+                 alt="Kitchen cabinet upgrade" 
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                 referrerpolicy="no-referrer">
+          </div>
+          <p class="mt-4 font-sans text-sm md:text-base text-stone-700 text-center transition-colors group-hover:text-brand-gold-dark">
+            Kitchen cabinet upgrade
+          </p>
+        </div>
+
+        <!-- Card 3: Muji-style bedroom design -->
+        <div class="flex flex-col items-center group">
+          <div class="w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden border border-stone-200/80 bg-stone-100 relative transition-all duration-300 hover:border-brand-gold/40 hover:scale-[1.02] hover:shadow-md">
+            <!-- EDIT IMAGE: Replace path below to customize Recent Project Card 3 -->
+            <img src="assets/images/portfolio-bedroom.png" 
+                 alt="Muji-style bedroom design" 
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                 referrerpolicy="no-referrer">
+          </div>
+          <p class="mt-4 font-sans text-sm md:text-base text-stone-700 text-center transition-colors group-hover:text-brand-gold-dark">
+            Muji-style bedroom design
+          </p>
+        </div>
+
+        <!-- Card 4: Airbnb unit setup -->
+        <div class="flex flex-col items-center group">
+          <div class="w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden border border-stone-200/80 bg-stone-100 relative transition-all duration-300 hover:border-brand-gold/40 hover:scale-[1.02] hover:shadow-md">
+            <!-- EDIT IMAGE: Replace path below to customize Recent Project Card 4 -->
+            <img src="assets/images/portfolio-dining.jpeg" 
+                 alt="Airbnb unit setup" 
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                 referrerpolicy="no-referrer">
+          </div>
+          <p class="mt-4 font-sans text-sm md:text-base text-stone-700 text-center transition-colors group-hover:text-brand-gold-dark">
+            Airbnb unit setup
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- ========================================== -->
+  <!-- 8. CLIENT TESTIMONIALS (EDIT HERE) -->
+  <!-- ========================================== -->
+  <section id="testimonials" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-[11px] font-bold text-brand-bronze uppercase tracking-[0.25em] block mb-3">Client Love</span>
+        <h2 class="font-serif text-2xl sm:text-4xl font-semibold text-stone-900 tracking-tight mb-4">What Our Clients Say</h2>
+        <div class="w-12 h-1 bg-brand-gold mx-auto mb-6 rounded"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Testimonial 1 -->
+        <div class="bg-white border border-stone-200/60 p-6 sm:p-8 rounded-2xl flex flex-col justify-between shadow-sm hover:border-brand-gold/30 transition-all">
+          <div>
+            <div class="text-amber-500 mb-5 text-sm">★★★★★</div>
+            <p class="text-stone-600 text-xs sm:text-sm leading-relaxed italic font-light mb-6">
+              "Corevo Design helped us transform our newly bought condo into an incredibly warm and highly practical home. Their direct carpentry quality was top-notch, and they sent photo updates daily. Highly professional!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-stone-100">
+            <div>
+              <h4 class="font-sans font-bold text-xs sm:text-sm text-stone-900">Jessie</h4>
+              <p class="text-[10px] text-stone-500">Condo Owner, KL</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white border border-stone-200/60 p-6 sm:p-8 rounded-2xl flex flex-col justify-between shadow-sm hover:border-brand-gold/30 transition-all">
+          <div>
+            <div class="text-amber-500 mb-5 text-sm">★★★★★</div>
+            <p class="text-stone-600 text-xs sm:text-sm leading-relaxed italic font-light mb-6">
+              "Our Airbnb unit got so many compliments after their makeover! They created extremely photo-worthy corners and specified highly robust laminates that are incredibly easy for cleaners to wipe down. Smooth turnkey process!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-stone-100">
+            <div>
+              <h4 class="font-sans font-bold text-xs sm:text-sm text-stone-900">Amir</h4>
+              <p class="text-[10px] text-stone-500">Airbnb Host, Petaling Jaya</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white border border-stone-200/60 p-6 sm:p-8 rounded-2xl flex flex-col justify-between shadow-sm hover:border-brand-gold/30 transition-all">
+          <div>
+            <div class="text-amber-500 mb-5 text-sm">★★★★★</div>
+            <p class="text-stone-600 text-xs sm:text-sm leading-relaxed italic font-light mb-6">
+              "They understood our retail showroom requirements completely and delivered a highly modern layout that our team and customers absolutely love. The cabinetry fits perfectly and was completed exactly on schedule."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-stone-100">
+            <div>
+              <h4 class="font-sans font-bold text-xs sm:text-sm text-stone-900">Daniel</h4>
+              <p class="text-[10px] text-stone-500">Retail Showroom Owner</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- 5. SERVICES SECTION -->
+  <!-- ========================================== -->
+  <section id="services" class="py-20 bg-brand-sand/60 border-t border-b border-stone-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-[11px] font-bold text-brand-bronze uppercase tracking-[0.25em] block mb-3">What We Do</span>
+        <h2 class="font-serif text-2xl sm:text-4xl font-semibold text-stone-900 tracking-tight mb-4">Our Services</h2>
+        <div class="w-12 h-1 bg-brand-gold mx-auto mb-6 rounded"></div>
+        <p class="text-stone-600 text-sm sm:text-base leading-relaxed font-light">
+          We deliver complete transformation options. Click "Enquire Now" to send details directly via the form.
+        </p>
+      </div>
+
+      <!-- Service Card Grid (EDIT CARDS HERE) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Service 1 -->
+        <div class="bg-white border border-stone-200/50 p-6 rounded-2xl flex flex-col justify-between group">
+          <div>
+            <div class="p-2.5 rounded-lg bg-stone-50 border border-stone-100 w-10 h-10 flex items-center justify-center text-brand-gold mb-5">
+              <span class="text-brand-gold flex items-center justify-center">
+                <svg class="w-5 h-5 stroke-[1.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+              </span>
+            </div>
+            <h3 class="font-sans font-bold text-sm text-stone-900 mb-2">Full Home Renovation</h3>
+            <p class="text-xs text-stone-500 leading-relaxed font-light">Full structural changes covering plaster ceilings, masonry, rewiring, custom carpentry and paint.</p>
+          </div>
+          <button data-scroll-to="contact" class="mt-5 inline-flex items-center gap-1 text-[11px] font-bold text-brand-gold uppercase tracking-wider bg-transparent">
+            <span>Enquire Now →</span>
+          </button>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="bg-white border border-stone-200/50 p-6 rounded-2xl flex flex-col justify-between group">
+          <div>
+            <div class="p-2.5 rounded-lg bg-stone-50 border border-stone-100 w-10 h-10 flex items-center justify-center text-brand-gold mb-5">
+              <span class="text-brand-gold flex items-center justify-center">
+                <svg class="w-5 h-5 stroke-[1.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="14" x="2" y="6" rx="2" />
+                  <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+              </span>
+            </div>
+            <h3 class="font-sans font-bold text-sm text-stone-900 mb-2">Office & Retail Refits</h3>
+            <p class="text-xs text-stone-500 leading-relaxed font-light">Modern commercial setups, glass partition screens, collaborative zones, and acoustic wall panels.</p>
+          </div>
+          <button data-scroll-to="contact" class="mt-5 inline-flex items-center gap-1 text-[11px] font-bold text-brand-gold uppercase tracking-wider bg-transparent">
+            <span>Enquire Now →</span>
+          </button>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="bg-white border border-stone-200/50 p-6 rounded-2xl flex flex-col justify-between group">
+          <div>
+            <div class="p-2.5 rounded-lg bg-stone-50 border border-stone-100 w-10 h-10 flex items-center justify-center text-brand-gold mb-5">
+              <span class="text-brand-gold flex items-center justify-center">
+                <svg class="w-5 h-5 stroke-[1.5]" style="transform: rotate(180deg);" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 10c-2 0 -3 -1.5 -3 -3c0 -1.91 1.55 -3 3 -3c1.45 0 3 1.09 3 3c0 1.5 -1 3 -3 3z" />
+                  <path d="M12 21c-2 0 -3.732 -1.127 -4.732 -3.007l-3.268 -5.993c-1 -1.45 -1 -3.55 0 -5c1 -1.45 3 -2 4.5 -1c.427 .285 .804 .662 1.09 1.09l.41 .61" />
+                  <path d="M12 21c2 0 3.732 -1.127 4.732 -3.007l3.268 -5.993c1 -1.45 1 -3.55 0 -5c-1 -1.45 -3 -2 -4.5 -1c-.427 .285 -.804 .662 -1.09 1.09l-.41 .61" />
+                </svg>
+              </span>
+            </div>
+            <h3 class="font-sans font-bold text-sm text-stone-900 mb-2">Airbnb Makeover Package</h3>
+            <p class="text-xs text-stone-500 leading-relaxed font-light">Aesthetic and high durability coordinate packages curated for high photos booking appeal.</p>
+          </div>
+          <button data-scroll-to="contact" class="mt-5 inline-flex items-center gap-1 text-[11px] font-bold text-brand-gold uppercase tracking-wider bg-transparent">
+            <span>Enquire Now →</span>
+          </button>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="bg-white border border-stone-200/50 p-6 rounded-2xl flex flex-col justify-between group">
+          <div>
+            <div class="p-2.5 rounded-lg bg-stone-50 border border-stone-100 w-10 h-10 flex items-center justify-center text-brand-gold mb-5">
+              <span class="text-brand-gold flex items-center justify-center">
+                <svg class="w-5 h-5 stroke-[1.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3" />
+                  <path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5" />
+                  <path d="M2 11h20" />
+                  <path d="M6 14v-3" />
+                  <path d="M18 14v-3" />
+                </svg>
+              </span>
+            </div>
+            <h3 class="font-sans font-bold text-sm text-stone-900 mb-2">Condo Styling</h3>
+            <p class="text-xs text-stone-500 leading-relaxed font-light">Turnkey urban styling optimized for cozy apartments, custom cabinetry and practical space layout.</p>
+          </div>
+          <button data-scroll-to="contact" class="mt-5 inline-flex items-center gap-1 text-[11px] font-bold text-brand-gold uppercase tracking-wider bg-transparent">
+            <span>Enquire Now →</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 7. OUR 5-STEP PROCESS TIMELINE -->
+  <!-- ========================================== -->
+  <section id="process" class="py-20 bg-brand-sand/60 border-t border-b border-stone-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+      <span class="text-[11px] font-bold text-brand-bronze uppercase tracking-[0.25em] block mb-3">Our Process</span>
+      <h2 class="font-serif text-2xl sm:text-4xl font-semibold text-stone-900 tracking-tight mb-4">Our Simple 5-Step Process</h2>
+      <div class="w-12 h-1 bg-brand-gold mx-auto mb-14 rounded"></div>
+
+      <div class="relative max-w-5xl mx-auto">
+        <div class="absolute top-1/2 left-12 right-12 h-[2px] border-t border-dashed border-brand-gold/40 -translate-y-1/2 z-0 hidden md:block"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
+          
+          <div class="flex flex-col items-center bg-white p-5 rounded-2xl border border-stone-100 shadow-sm md:shadow-none md:border-none md:p-0" style="padding-left: 0px; padding-top: 9px; margin-left: 0px; margin-top: 0px;">
+            <div class="w-14 h-14 rounded-full bg-brand-sand border border-stone-200/80 flex flex-col items-center justify-center text-brand-bronze relative shadow-none" style="margin-top: 0px; margin-bottom: 7px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <h4 class="font-sans font-bold text-sm text-stone-900 mb-1">1. WhatsApp Us</h4>
+            <p class="text-[11px] text-stone-500 max-w-[150px] leading-relaxed font-light">Send a friendly message to kickstart your consultation.</p>
+          </div>
+
+          <div class="flex flex-col items-center bg-white p-5 rounded-2xl border border-stone-100 shadow-sm md:shadow-none md:border-none md:p-0" style="padding-top: 9px;">
+            <div class="w-14 h-14 rounded-full bg-brand-sand border border-stone-200/80 flex flex-col items-center justify-center text-brand-bronze relative shadow-none" style="margin-bottom: 7px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            </div>
+            <h4 class="font-sans font-bold text-sm text-stone-900 mb-1">2. Share Layout</h4>
+            <p class="text-[11px] text-stone-500 max-w-[150px] leading-relaxed font-light">Send over your developer floor plan, photos &amp; budget.</p>
+          </div>
+
+          <div class="flex flex-col items-center bg-white p-5 rounded-2xl border border-stone-100 shadow-sm md:shadow-none md:border-none md:p-0" style="padding-top: 9px;">
+            <div class="w-14 h-14 rounded-full bg-brand-sand border border-stone-200/80 flex flex-col items-center justify-center text-brand-bronze relative shadow-none" style="margin-bottom: 7px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+            </div>
+            <h4 class="font-sans font-bold text-sm text-stone-900 mb-1">3. Layout Guide</h4>
+            <p class="text-[11px] text-stone-500 max-w-[150px] leading-relaxed font-light">Receive professional spatial layout ideas &amp; material boards.</p>
+          </div>
+
+          <div class="flex flex-col items-center bg-white p-5 rounded-2xl border border-stone-100 shadow-sm md:shadow-none md:border-none md:p-0" style="padding-top: 9px;">
+            <div class="w-14 h-14 rounded-full bg-brand-sand border border-stone-200/80 flex flex-col items-center justify-center text-brand-bronze relative shadow-none" style="margin-bottom: 7px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
+            </div>
+            <h4 class="font-sans font-bold text-sm text-stone-900 mb-1">4. Custom Quote</h4>
+            <p class="text-[11px] text-stone-500 max-w-[150px] leading-relaxed font-light">Review clear itemized quotation with zero hidden charges.</p>
+          </div>
+
+          <div class="flex flex-col items-center bg-white p-5 rounded-2xl border border-stone-100 shadow-sm md:shadow-none md:border-none md:p-0" style="padding-top: 9px;">
+            <div class="w-14 h-14 rounded-full bg-brand-sand border border-stone-200/80 flex flex-col items-center justify-center text-brand-bronze relative shadow-none" style="margin-bottom: 7px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><circle cx="7.5" cy="15.5" r="5.5"></circle><path d="m21 2-9.6 9.6"></path><path d="m15.5 7.5 3 3M17 6l3 3"></path></svg>
+            </div>
+            <h4 class="font-sans font-bold text-sm text-stone-900 mb-1">5. Keys Handover</h4>
+            <p class="text-[11px] text-stone-500 max-w-[150px] leading-relaxed font-light">Sit back as our master carpenters hand over your finished unit.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ========================================== -->
+  <!-- 9. FAQ & DIRECT CHAT SIDEBAR -->
+  <!-- ========================================== -->
+  <section id="faq" class="py-20 bg-brand-sand/60 border-t border-b border-stone-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left FAQ Accordions (EDIT QUESTIONS HERE) -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="text-left space-y-3">
+            <span class="text-[11px] font-bold text-brand-bronze uppercase tracking-[0.25em] block">Common Questions</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-stone-900 tracking-tight">Frequently Asked Questions</h2>
+            <div class="w-12 h-1 bg-brand-gold rounded"></div>
+          </div>
+
+          <!-- FAQ Accordion List -->
+          <div id="faq-accordion-group" class="space-y-3.5 w-full">
+            
+            <!-- Item 1 -->
+            <div class="faq-item border rounded-xl transition-all duration-300 overflow-hidden border-brand-gold/40 bg-brand-sand shadow-sm">
+              <button class="w-full flex items-center justify-between text-left p-4 md:p-5 font-sans font-medium text-stone-900 focus:outline-none bg-transparent cursor-pointer border-none">
+                <span class="text-sm md:text-base tracking-tight font-medium">Do you provide free consultation?</span>
+                <span class="faq-icon-wrapper p-1.5 rounded-full shrink-0 transition-transform duration-300 bg-brand-gold text-white rotate-180">▼</span>
+              </button>
+              <div class="faq-content px-4 pb-5 md:px-5 md:pb-6 text-sm text-stone-600 leading-relaxed font-light border-t border-dashed border-stone-200 pt-3">
+                Yes, we provide a complete, obligation-free initial design consultation. We can discuss your layout requirements, lifestyle preferences, and preliminary budget over WhatsApp, video call, or at our showroom.
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="faq-item border rounded-xl transition-all duration-300 overflow-hidden border-stone-200 bg-white">
+              <button class="w-full flex items-center justify-between text-left p-4 md:p-5 font-sans font-medium text-stone-900 focus:outline-none bg-transparent cursor-pointer border-none">
+                <span class="text-sm md:text-base tracking-tight font-medium">Can you work based on my budget?</span>
+                <span class="faq-icon-wrapper p-1.5 rounded-full shrink-0 transition-transform duration-300 bg-stone-50 text-stone-500">▼</span>
+              </button>
+              <div class="faq-content hidden px-4 pb-5 md:px-5 md:pb-6 text-sm text-stone-600 leading-relaxed font-light border-t border-dashed border-stone-200 pt-3">
+                Absolutely! We focus on 'design for budget'. By knowing your financial limit, our designers can strategically suggest materials, prioritize essential carpentry, and recommend tailored smart storage solutions.
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="faq-item border rounded-xl transition-all duration-300 overflow-hidden border-stone-200 bg-white">
+              <button class="w-full flex items-center justify-between text-left p-4 md:p-5 font-sans font-medium text-stone-900 focus:outline-none bg-transparent cursor-pointer border-none">
+                <span class="text-sm md:text-base tracking-tight font-medium">How long does the physical renovation take?</span>
+                <span class="faq-icon-wrapper p-1.5 rounded-full shrink-0 transition-transform duration-300 bg-stone-50 text-stone-500">▼</span>
+              </button>
+              <div class="faq-content hidden px-4 pb-5 md:px-5 md:pb-6 text-sm text-stone-600 leading-relaxed font-light border-t border-dashed border-stone-200 pt-3">
+                For typical condo makeovers, the timeline is approximately 4 to 8 weeks. Comprehensive landed house renovations generally require 8 to 12 weeks. We supply an exact project calendar with milestone guarantees prior to commencing work.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Sidebar WhatsApp CTA -->
+        <div class="lg:col-span-5 bg-stone-900 text-white rounded-2xl p-6 md:p-8 border border-stone-800 shadow-xl space-y-6">
+          <div class="space-y-4">
+            <div class="w-10 h-10 bg-brand-gold/20 border border-brand-gold/30 rounded-xl flex items-center justify-center text-brand-gold">
+              💬
+            </div>
+            <h3 class="font-serif text-lg font-bold text-white">Prefer to Chat Directly on WhatsApp?</h3>
+            <p class="text-xs text-stone-300 leading-relaxed font-light">
+              Skip compiling forms! Send your floor plan layout or current interior photos directly to our senior design coordinators for an immediate assessment.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-stone-800">
+            <a href="https://wa.me/60103925762" target="_blank" rel="noopener noreferrer" 
+               class="w-full inline-flex items-center justify-center gap-2 bg-brand-gold hover:bg-brand-gold-dark text-stone-950 font-bold text-xs uppercase tracking-wider py-4 rounded-xl shadow-lg transition-all">
+              <span>Send Layout on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 10. LEAD INQUIRY FORM SECTION -->
+  <!-- ========================================== -->
+  <section id="contact" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-[11px] font-bold text-brand-bronze uppercase tracking-[0.25em] block mb-2">Book a Free Layout Consultation</span>
+        <h2 class="font-serif text-2xl sm:text-4xl font-semibold text-stone-900 tracking-tight">Get Started with Corevo</h2>
+        <div class="w-12 h-1 bg-brand-gold mx-auto mt-4 mb-4 rounded"></div>
+        <p class="text-stone-500 text-xs sm:text-sm font-light">
+          Fill in your property specifications below, and our senior interior design consultants will draft a complimentary space layout recommendation for you within 48 hours.
+        </p>
+      </div>
+
+      <!-- Lead Contact Form (Interactivity handled in main.js) -->
+      <div class="w-full bg-white rounded-2xl shadow-2xl p-6 md:p-10 border border-stone-200/80 relative overflow-hidden" id="inquiry-lead-form">
+        <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark"></div>
+        
+        <form id="lead-inquiry-form" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            
+            <div class="space-y-1.5 text-left">
+              <label for="form-name" class="text-xs font-semibold text-stone-700 uppercase tracking-wide">Your Full Name <span class="text-rose-500">*</span></label>
+              <input type="text" name="name" id="form-name" required placeholder="e.g. Corevo" class="w-full px-4 py-3 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold bg-stone-50/50 text-sm">
+            </div>
+
+            <div class="space-y-1.5 text-left">
+              <label for="form-phone" class="text-xs font-semibold text-stone-700 uppercase tracking-wide">Phone / WhatsApp Number <span class="text-rose-500">*</span></label>
+              <input type="tel" name="phone" id="form-phone" required placeholder="e.g. +6010-392 5762" class="w-full px-4 py-3 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold bg-stone-50/50 text-sm">
+            </div>
+
+            <div class="space-y-1.5 text-left">
+              <label for="form-propertyType" class="text-xs font-semibold text-stone-700 uppercase tracking-wide">Property Type <span class="text-rose-500">*</span></label>
+              <select name="propertyType" id="form-propertyType" required class="w-full px-4 py-3 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold bg-stone-50/50 text-sm cursor-pointer">
+                <option value="">Select property type...</option>
+                <option value="condo">Condominium / Apartment</option>
+                <option value="landed">Landed House (Terrace / Semi-D / Bungalow)</option>
+                <option value="airbnb">Airbnb / Homestay Unit</option>
+                <option value="office">Office / Coworking Space</option>
+                <option value="retail">Retail Shop / Commercial Lot</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="space-y-1.5 text-left">
+              <label for="form-location" class="text-xs font-semibold text-stone-700 uppercase tracking-wide">Property Location (Malaysia) <span class="text-rose-500">*</span></label>
+              <input type="text" name="location" id="form-location" required placeholder="e.g. Petaling Jaya, KL" class="w-full px-4 py-3 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold bg-stone-50/50 text-sm">
+            </div>
+
+            <div class="space-y-1.5 text-left">
+              <label for="form-serviceNeeded" class="text-xs font-semibold text-stone-700 uppercase tracking-wide">Service Needed <span class="text-rose-500">*</span></label>
+              <select name="serviceNeeded" id="form-serviceNeeded" required class="w-full px-4 py-3 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold bg-stone-50/50 text-sm cursor-pointer">
+                <option value="">Select service needed...</option>
+                <option value="full">Full Turnkey Renovation & Design</option>
+                <option value="kitchen">Kitchen Cabinetry & Built-ins</option>
+                <option value="living">Living Room Makeover</option>
+                <option value="bedroom">Bedroom & Built-in Wardrobe</option>
+                <option value="airbnb-package">Airbnb Full-Furniture Styling Package</option>
+                <option value="commercial">Office & Shop Renovation</option>
+                <option value="consultation">Space Planning & Layout Proposal</option>
+              </select>
+            </div>
+
+            <div class="space-y-1.5 text-left">
+              <label for="form-estimatedBudget" class="text-xs font-semibold text-stone-700 uppercase tracking-wide">Estimated Budget <span class="text-rose-500">*</span></label>
+              <select name="estimatedBudget" id="form-estimatedBudget" required class="w-full px-4 py-3 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold bg-stone-50/50 text-sm cursor-pointer">
+                <option value="">Select budget range...</option>
+                <option value="under-30k">Below RM 30,000</option>
+                <option value="30k-60k">RM 30,000 - RM 60,000</option>
+                <option value="60k-100k">RM 60,000 - RM 100,000</option>
+                <option value="100k-150k">RM 100,000 - RM 150,000</option>
+                <option value="150k-plus">RM 150,000 and above</option>
+              </select>
+            </div>
+
+            <!-- Condo Size Field -->
+            <div class="space-y-1.5 text-left">
+              <label for="form-condoSize" class="text-xs font-semibold text-stone-700 uppercase tracking-wide">Condo Size <span class="text-rose-500">*</span></label>
+              <div class="relative">
+                <input 
+                  type="number" 
+                  name="condoSize" 
+                  id="form-condoSize" 
+                  min="100" 
+                  max="10000" 
+                  step="1" 
+                  inputmode="numeric" 
+                  required 
+                  placeholder="e.g. 850" 
+                  class="w-full px-4 pr-16 py-3 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold bg-stone-50/50 text-sm"
+                  oninvalid="this.setCustomValidity('Please enter your condo size in square feet.')"
+                  oninput="this.setCustomValidity('')"
+                >
+                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-semibold text-stone-500 bg-stone-100 px-2.5 py-1 rounded border border-stone-200">sqft.</span>
+              </div>
+              <p class="text-[10px] text-stone-400">Enter the approximate built-up area of your condo.</p>
+            </div>
+
+            <!-- Preferred Interior Design Style Field -->
+            <div class="space-y-1.5 text-left">
+              <label for="form-designStyle" class="text-xs font-semibold text-stone-700 uppercase tracking-wide">Preferred Interior Design Style <span class="text-rose-500">*</span></label>
+              <select name="designStyle" id="form-designStyle" required class="w-full px-4 py-3 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold bg-stone-50/50 text-sm cursor-pointer">
+                <option value="" selected disabled>Select your preferred design style</option>
+                <option value="modern-minimalist">Modern Minimalist</option>
+                <option value="contemporary">Contemporary</option>
+                <option value="japandi">Japandi</option>
+                <option value="scandinavian">Scandinavian</option>
+                <option value="muji-modern-japanese">Muji / Modern Japanese</option>
+                <option value="modern-luxury">Modern Luxury</option>
+                <option value="industrial">Industrial</option>
+                <option value="tropical-contemporary">Tropical Contemporary</option>
+                <option value="classic-contemporary">Classic Contemporary</option>
+                <option value="airbnb-short-stay">Airbnb / Short-Stay Friendly</option>
+                <option value="not-sure">Not Sure Yet – I Need a Recommendation</option>
+              </select>
+              <p class="text-[10px] text-stone-400">Choose the style you like most. You may select "Not sure yet" if you need our recommendation.</p>
+            </div>
+
+          </div>
+
+          <div class="space-y-1.5 text-left">
+            <label for="form-message" class="text-xs font-semibold text-stone-700 uppercase tracking-wide">Message / Project Details (Optional)</label>
+            <textarea name="message" id="form-message" rows="4" placeholder="Tell us about your project timeline, key dates, style preferences..." class="w-full px-4 py-3 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold bg-stone-50/50 text-sm resize-y"></textarea>
+          </div>
+
+           <button type="submit" class="w-full flex items-center justify-center gap-2 bg-brand-gold hover:bg-brand-gold-dark text-stone-950 font-bold text-sm px-6 py-4 rounded-xl transition-all shadow-xl disabled:opacity-50 cursor-pointer">
+            <span>Get Free Quotation Now</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 11. FOOTER SECTION (EDIT HERE) -->
+  <!-- ========================================== -->
+  <footer id="main-footer" class="bg-stone-950 text-stone-300 pt-16 pb-12 border-t border-stone-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+      
+      <!-- Brand Brief -->
+      <div class="md:col-span-5 space-y-5">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full border border-brand-gold bg-stone-900/40 flex items-center justify-center">
+            <span class="font-serif text-sm font-bold text-brand-gold">C</span>
+          </div>
+          <div>
+            <h3 class="font-serif text-base font-bold text-white tracking-wide uppercase">
+              Corevo <span class="text-brand-gold">Interior</span>
+            </h3>
+            <span class="block text-[8px] text-brand-gold/60 tracking-wider uppercase font-light">Renovation &amp; Interior Design</span>
+          </div>
+        </div>
+        <p class="text-xs text-stone-400 leading-relaxed max-w-sm font-light">
+          We design and construct high-end, bespoke interior spaces in Malaysia, specializing in urban condominiums, landed houses, and collaborative offices. Transparent pricing, professional timelines.
+        </p>
+        <div class="text-[10px] text-stone-500 font-sans">
+          SSM Registered Company | Corevo Interior Sdn. Bhd.
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="md:col-span-2 space-y-4">
+        <h4 class="font-serif text-xs font-bold uppercase tracking-wider text-white border-b border-stone-900 pb-2">Quick Links</h4>
+        <ul class="space-y-2.5 text-xs text-stone-400 font-sans">
+          <li><button data-scroll-to="hero" class="hover:text-brand-gold bg-transparent text-stone-400 border-none">Home</button></li>
+          <li><button data-scroll-to="services" class="hover:text-brand-gold bg-transparent text-stone-400 border-none">Services</button></li>
+          <li><button data-scroll-to="portfolio" class="hover:text-brand-gold bg-transparent text-stone-400 border-none">Portfolio</button></li>
+          <li><button data-scroll-to="process" class="hover:text-brand-gold bg-transparent text-stone-400 border-none">Process</button></li>
+          <li><button data-scroll-to="faq" class="hover:text-brand-gold bg-transparent text-stone-400 border-none">FAQ</button></li>
+          <li><button data-scroll-to="contact" class="hover:text-brand-gold bg-transparent text-stone-400 border-none">Contact</button></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="md:col-span-3 space-y-4">
+        <h4 class="font-serif text-xs font-bold uppercase tracking-wider text-white border-b border-stone-900 pb-2">Our Services</h4>
+        <ul class="space-y-2.5 text-xs text-stone-400">
+          <li>Condo &amp; Apartment Remodeling</li>
+          <li>Landed House Renovation</li>
+          <li>Kitchen Cabinetry &amp; Built-ins</li>
+          <li>Bespoke Wardrobe Carpentry</li>
+          <li>Airbnb Styling Packages</li>
+          <li>Office Planning &amp; Partitioning</li>
+        </ul>
+      </div>
+
+      <!-- Connect Contacts (EDIT HERE) -->
+      <div class="md:col-span-2 space-y-4" style="width: 185px;">
+        <h4 class="font-serif text-xs font-bold uppercase tracking-wider text-white border-b border-stone-900 pb-2">Stay Connected</h4>
+        <ul class="space-y-2.5 text-xs text-stone-400 font-sans">
+          <li class="flex items-center gap-2"><span>📞</span> <a href="https://wa.me/60103925762" class="hover:text-brand-gold transition-colors">+60 10-392 5762</a></li>
+          <li class="flex items-center gap-2"><span>✉️</span> <span class="truncate">corevo.interior@gmail.com</span></li>
+          <li class="flex items-center gap-2"><span>📍</span> <span class="leading-relaxed">Kuala Lumpur, Malaysia</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-stone-900 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-stone-500 font-sans">
+      <div>&copy; 2026 Corevo Interior. All rights reserved.</div>
+      <div class="flex gap-4">
+        <span class="hover:text-stone-400 cursor-pointer">Privacy Policy</span>
+        <span>&bull;</span>
+        <span class="hover:text-stone-400 cursor-pointer">Terms of Use</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- 12. FLOATING WHATSAPP CHAT POPUP WIDGET -->
+  <!-- ========================================== -->
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end max-w-xs font-sans" id="whatsapp-live-widget">
+    
+    <!-- Speech Bubble (EDIT CHAT BUBBLE MESSAGE HERE) -->
+    <div id="whatsapp-chat-bubble" class="bg-white border border-stone-200/80 rounded-2xl shadow-2xl p-4 mb-3 text-left relative z-10">
+      
+      <!-- Close Speech Bubble Button -->
+      <button id="whatsapp-popup-close" class="absolute top-2.5 right-2.5 text-stone-400 hover:text-stone-600 p-1 rounded-full bg-stone-50 border-none cursor-pointer" title="Dismiss message">
+        ✕
+      </button>
+
+      <div class="flex items-start gap-2.5">
+        <div class="w-2.5 h-2.5 rounded-full bg-brand-gold shrink-0 mt-1.5 animate-pulse"></div>
+        <div>
+          <h5 class="font-bold text-xs text-stone-900">Corevo Interior Team</h5>
+          <p class="text-[11px] text-stone-500 mt-0.5 leading-normal">
+            Hi! Let us know if you want free layout advice. Send us your floor plan here!
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-3">
+        <a href="https://wa.me/60103925762?text=Hi%20Corevo%20Interior" 
+           target="_blank" rel="noopener noreferrer" 
+           class="w-full inline-flex items-center justify-center gap-1.5 bg-brand-gold hover:bg-brand-gold-dark text-stone-950 font-bold text-[10px] uppercase py-2 rounded-lg transition-all">
+          <span>Start WhatsApp Chat</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Trigger Floating Button (Click to toggle chat bubble) -->
+    <button id="whatsapp-trigger-btn" class="w-12 h-12 rounded-full bg-brand-gold hover:bg-brand-gold-dark text-stone-950 flex items-center justify-center shadow-2xl transition-transform duration-300 active:scale-95 cursor-pointer hover:scale-105" title="Toggle WhatsApp Assistant">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.458L0 24zm6.335-1.662l.361.214a9.82 9.82 0 005.312 1.554c5.399 0 9.792-4.393 9.795-9.796.002-2.615-1.015-5.074-2.864-6.925C17.143 3.535 14.68 2.517 12.06 2.517c-5.399 0-9.793 4.393-9.795 9.797a9.782 9.782 0 001.6 5.378l.244.388-1.056 3.855 3.951-1.036z"/></svg>
+    </button>
+  </div>
+
+  <!-- Core Javascript Interactivity Engine -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
